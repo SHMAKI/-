@@ -40,7 +40,7 @@ if (type(x) == int) & (type(y) == int):
                                              list(range(coins[8]+1)),
                                             ):
             total = sum(np.array([a,b,c,d,e,f,g,h,i]) * species)
-            if y<total:
+            if y=<total:
                 ans = total - y
                 #print(ans)
                 break
