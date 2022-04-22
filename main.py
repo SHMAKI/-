@@ -11,22 +11,25 @@ if (type(x) == int) & (type(y) == int):
     st.success('お釣り計算を開始します．')
 
     st.text(f"所持金{x}円で, {y}円の商品を買った時のおつりは...\n")
-
     if x < y:
         st.text("お金がたりません")
     else:
 
+        y_10k = y // 10000
+        y_tmp = y % 10000
+        x_tmp = x - y_10k * 10000
+
         species = np.array([10000, 5000, 1000, 500, 100, 50, 10, 5, 1])
 
-        n10000 = x // 10000
-        n5000 = x % 10000 // 5000
-        n1000 = x % 5000 // 1000
-        n500 = x % 1000 // 500
-        n100 = x % 500 // 100
-        n50 = x % 100 // 50
-        n10 = x % 50 // 10
-        n5 = x % 10 // 5
-        n1 = x % 5
+        n10000 = x_tmp // 10000
+        n5000 = x_tmp % 10000 // 5000
+        n1000 = x_tmp % 5000 // 1000
+        n500 = x_tmp % 1000 // 500
+        n100 = x_tmp % 500 // 100
+        n50 = x_tmp % 100 // 50
+        n10 = x_tmp % 50 // 10
+        n5 = x_tmp % 10 // 5
+        n1 = x_tmp % 5
 
         coins=np.array([n10000, n5000, n1000, n500, n100, n50, n10, n5, n1,])
 
@@ -41,8 +44,8 @@ if (type(x) == int) & (type(y) == int):
                                              list(range(coins[8]+1)),
                                             ):
             total = sum(np.array([a,b,c,d,e,f,g,h,i]) * species)
-            if y<=total:
-                ans = total - y
+            if y_tmp<=total:
+                ans = total - y_tmp
                 #print(ans)
                 break
 
