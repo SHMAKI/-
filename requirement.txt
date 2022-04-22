@@ -1,0 +1,4 @@
+numpy
+random
+itertools
+streamlit
