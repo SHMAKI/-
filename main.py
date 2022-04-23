@@ -22,7 +22,7 @@ if (type(x) == int) & (type(y) == int):
         for z in range(y_tmp_keta):
             y_keta = int(str(y_tmp)[-(1+z)])
             x_keta = int(str(x_tmp)[-(1+z)])
-            if y_keta + kuriagari <= x_keta:#coins[-(1+2*z)]:
+            if y_keta + kuriagari <= x_keta:
                 if y_keta % 5 + kuriagari  <= x_keta % 5:
                     total_list[-(1+z)] = y_keta + kuriagari
                     kuriagari = 0
