@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title('理系でも出来るお釣り計算_改良版')
 st.text("前提条件: 硬貨と紙幣の枚数は最小と仮定します")
-st.text("お釣りの硬貨と紙幣の枚数が最小となるような仮定します")
+st.text("手持ちの硬貨と紙幣の数をなるべく減らすように計算します")
 x = st.number_input('所持金', 0,None,300)
 y = st.number_input('商品価格', 0,None,170)
 if (type(x) == int) & (type(y) == int):
