@@ -18,23 +18,19 @@ if (type(x) == int) & (type(y) == int):
         y_tmp_keta = len(str(y_tmp))
         # 各位を比較し、４パタンで場合分け
         total_list = [0,0,0,0,0]
-        kuriagari = 0
+        #kuriagari = 0
         for z in range(y_tmp_keta):
             y_keta = int(str(y_tmp)[-(1+z)])
             x_keta = int(str(x_tmp)[-(1+z)])
-            if y_keta + kuriagari <= x_keta:
-                if y_keta % 5 + kuriagari  <= x_keta % 5:
-                    total_list[-(1+z)] = y_keta + kuriagari
-                    kuriagari = 0
+            if y_keta <= x_keta:
+                if y_keta % 5  <= x_keta % 5:
+                    total_list[-(1+z)] = y_keta
                 else:
                     total_list[-(1+z)] = 5
-                    kuriagari = 0
-            elif y_keta % 5 + kuriagari  <= x_keta % 5:
-                total_list[-(1+z)] = y_keta % 5 + kuriagari
-                kuriagari = 1
+            elif y_keta % 5 <= x_keta % 5:
+                total_list[-(1+z)] = y_keta % 5
             else:
-                kuriagari = 1
-        total_list[-(2+z)] = kuriagari
+        #total_list[-(2+z)] = kuriagari
         total = int("".join( map(str, total_list)))
 
         ans = total - y_tmp
