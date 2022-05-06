@@ -29,7 +29,7 @@ if (type(x) == int) & (type(y) == int):
                     total_list[-(1+z)] = 5
             elif y_keta % 5 <= x_keta % 5:
                 total_list[-(1+z)] = y_keta % 5
-            else:
+        #    else:
         #total_list[-(2+z)] = kuriagari
         total = int("".join( map(str, total_list)))
 
